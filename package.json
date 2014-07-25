@@ -1,0 +1,13 @@
+{
+  "name": "online-resume",
+  "devDependencies": {
+    "express": "~4.4.2",
+    "ejs": "~1.0.0",
+    "serve-favicon": "~2.0.1",
+    "errorhandler": "~1.0.2"
+  },
+  "dependencies": {
+    "express": "^4.6.1",
+    "logfmt": "^1.1.2"
+  }
+}

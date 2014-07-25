@@ -1,0 +1,19 @@
+<polymer-element name="about-me" attributes="letter size margin" noscript>
+<template>
+	<style>
+		:host {
+			position: absolute;
+			top:-135px;
+			margin-left: {{margin}}px;
+		}
+		h1 {
+			font-family: 'Oswald', serif;
+			font-size: {{size}}px;
+
+		}
+	</style>
+	
+	<h1>{{letter}}</h1>
+
+</template>
+</polymer-element>

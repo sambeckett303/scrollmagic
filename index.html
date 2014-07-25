@@ -3,50 +3,566 @@
 <head>
 	<title>scrollmagic</title>
 
+	<script type"text/javascript" src="assets/platform.js"></script>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.12.1/TweenMax.min.js"></script>
-	<script type="text/javascript" src="jquery.scrollmagic.js"></script>
-  	<script type="text/javascript" src="jquery.scrollmagic.debug.js"></script>
+	<script type="text/javascript" src="assets/jquery.scrollmagic.js"></script>
+  	<script type="text/javascript" src="assets/jquery.scrollmagic.debug.js"></script>
+  	<script type"text/javascript" src="assets/polymer.js"></script>
   	<link rel="stylesheet" type="text/css" href="scrollcss.css">
+  	<link rel="stylesheet" type="text/css" href="style.css">
+  	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|3d-float">
+  	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Oswald">
+  	<link rel="import" href="elements/my-name.html">
+  	<link rel="import" href="elements/my-snowbarder.html">
+  	<link rel="import" href="elements/about-me.html">
+  	<link rel="import" href="elements/my-soccerball.html">
 
 </head>
 <body>
+	<!--<div style="position:absolute;top:0;bottom:0;right:0;left:0">-->
+		
+	
+
 	<div id="content-wrapper">
 
 	    <section id="pin" class="scroll-magic-section">
-	        <h3 id="hlpin">Pinned Yo!</h3>
+	    	<div id="myname" style="margin-left: auto; margin-right: auto; width: 1000px">
+	    		<my-name id="myname2"></my-name>
+	    	</div>
+	    	<div id="snowboard" style="position: relative;top: -920px;left: -170px;">
+	    		<my-snowboarder></my-snowboarder>
+	    	</div>
+	    	<div id="first-page" style="position: absolute; top:0; left:0; width:100%">
+		    	<h1 id="a" class="about-me" style="left:16%">A</h1>
+		    	<h1 id="b" class="about-me" style="left:19.5%">B</h1>
+		    	<h1 id="o" class="about-me" style="left:23.2%">O</h1>
+		    	<h1 id="u" class="about-me" style="left:27%">U</h1>
+		    	<h1 id="t" class="about-me" style="left:31.3%">T</h1>
 
-	        <div id="wipe">
-	            <div class="container">
-	                <h3>Wipe Uno TranslateY</h3>
-	            </div>
-	        </div>
+		    	<h1 id="m" class="about-me" style="left:40%">M</h1>
+		    	<h1 id="e" class="about-me" style="left:44.5%">E</h1>
 
-	        <div id="second-wipe">
-	            <div class="container">
-	                <h3>Wipe Dos TranslateY</h3>
-	            </div>
-	        </div>
+		    	<h1 id="i" class="interests" style="left:48.5%">I</h1>
+		    	<h1 id="n" class="interests" style="left:50%">N</h1>
+		    	<h1 id="t1" class="interests" style="left:52.6%">T</h1>
+		    	<h1 id="e1" class="interests" style="left:55%">E</h1>
+		    	<h1 id="r" class="interests" style="left:57.2%">R</h1>
+		    	<h1 id="e2" class="interests" style="left:60%">E</h1>
+		    	<h1 id="s" class="interests" style="left:62.2%">S</h1>
+		    	<h1 id="t2" class="interests" style="left:64.8%">T</h1>
+		    	<h1 id="s1" class="interests" style="left:67%">S</h1>
 
-	        <div id="slide">
-	            <div class="container">
-	                <h3>Slide Bounce Brosicle</h3>
-	                <h3> ZOMG Colors!</h3>
-	            </div>
-	        </div>
-	    	<!--
-	    	<div id="slide-dos">
-	            <div class="container">
-	                <h3>Slide TranslateX</h3>
-	            </div>
-	        </div>-->
 
-	        <div id="unpin">
-	            <div class="container">
-	                <h3>Unpinzd Dawg</h3>
-	            </div>
-	        </div>
+		    	<div id="soccerball" style="position: absolute; top:-110px; left:-170px; z-index: 2;">
+		    		<my-soccerball id="actualball"></my-soccerball>
+		    	</div>
+		    	<h1 id="soccer" style="position: absolute;top: 210px;left:30%;font-size: 40px;font-family: Oswald;width:140px;visibility: hidden; z-index: 1">SOCCER</h1>
+		    	<!--transition: visibility 0s 0.5s, opacity 0.5s linear   opacity: 0-->
+		    	<div id="stick" style="position: absolute; top: 220px; left: 1800px">
+		    		<img style="width: 300px; -webkit-transform:rotate(-52deg);" src="../img/stick.png">
+		    	</div>
+		    	<h1 id="hockey" style="position: absolute;top: 332px;left: 68%;font-size: 40px;font-family: Oswald;width:140px; visibility: hidden; transform-style: preserve-3d; -webkit-transform: rotateY(180deg); transform: rotateY(180deg);opacity:0">HOCKEY</h1>
+		    
+		    	<div id="snow" style="position:absolute; top:260px; left: -240px; transform:scale(0,0)">
+		    		<img src="../img/snowboarder.png" style="width: 150px">
+		    	</div>
+		    	<h1 id="snowboarding" style="position: absolute; top: 460px; left:20%; font-size:40px;font-family:Oswald;width:370px;opacity:0">SNOWBOARDING</h1>
 
+		    	<div id="biker" style="position: absolute; top: 610px; left: 1800px">
+		    		<img src="../img/bike.png" style="width:200px">
+		    	</div>
+		    	<h1 id="biking" style="position: absolute; top: 610px; left:1600px; font-size:40px;font-family:Oswald;width:370px">BIKING</h1>
+			</div>
+	    	<div id="second-page" style="position: absolute; top:100%; background-color:#990000; width:100%; height:100% ">
+	    		<h1 id="personal-timeline" style="font-size: 40px; font-family: Oswald" align="center">- Personal Timeline -</h1>
+	    		<div id="timeline-circle" style="">
+	    			<img src="../img/hourglass.png" style="height:65px; margin-top:5px; margin-left: 20px">
+	    		</div>
+	    		<div id="2spinner" style="position:absolute; left: -150px; top:114px">
+	    			<my-snowboarder></my-snowboarder>
+	    		</div>
+	    		<h1 id="e3" class="interests" style="left:22.6%; visibility:hidden">E</h1>
+	    		<h1 id="d" class="interests" style="left:24.3%; visibility:hidden">D</h1>
+	    		<h1 id="u2" class="interests" style="left:26.2%; visibility:hidden">U</h1>
+	    		<h1 id="c" class="interests" style="left:28.4%; visibility:hidden">C</h1>
+	    		<h1 id="a2" class="interests" style="left:30.4%; visibility:hidden">A</h1>
+	    		<h1 id="t3" class="interests" style="left:32.2%; visibility:hidden">T</h1>
+	    		<h1 id="i2" class="interests" style="left:34%; visibility:hidden">I</h1>
+	    		<h1 id="o2" class="interests" style="left:35%; visibility:hidden">O</h1>
+	    		<h1 id="n2" class="interests" style="left:37%; visibility:hidden">N</h1>
+
+	    		<h1 id="w" class="interests" style="left:61%; visibility: hidden">W</h1>
+	    		<h1 id="o3" class="interests" style="left:63.6%; visibility: hidden">O</h1>
+	    		<h1 id="r2" class="interests" style="left:65.67%; visibility: hidden">R</h1>
+	    		<h1 id="k" class="interests" style="left:67.5%; visibility: hidden">K</h1>
+	    		<hr id="line" style="width:0.5px; height:600px; position: absolute; left: 50%; visibility: hidden; opacity: 0"/>
+	    		<!--
+	    		<div id="starthigh">
+	    			<div id="date1">
+	    				2007
+	    			</div>
+	    			<div id="content1">
+	    				<img src="../img/coniferhs.jpg" style="height: 150px; float: right; display: inline-block">
+	    				<p style="display: inline-block"> Started Attending Conifer High School </p>
+	    			</div>
+	    		</div>-->
+	    		<div id="date1" style="position:absolute; left:36%; top:247px; visibility: hidden; opacity: 0;">
+	    			<div class="date">
+	    				<h3>2007</h3>
+	    			</div>
+	    			<div class="arrow-right"></div>
+	    			<div id="edu-content1" class="shadow">
+	    				<img id="conifer" src="../img/coniferhs.jpg">
+	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px;">Started attending Conifer High School</p>
+	    			</div>
+	    		</div>
+	    		<div id="date2" style="position:absolute; left:55.5%; top:247px; visibility: hidden; opacity: 0;">
+	    			<div class="date">
+	    				<h3 style="left:-7px">2007</h3>
+	    			</div>
+	    			<div class="arrow-left"></div>
+	    			<div id="work-content1" class="shadow">
+	    				<img id="ywp" src="../img/jeffco.jpg">
+	    				<p style="font-size:25px;position:relative;left:27px;font-family:Oswald;top:-15px;width:261px;">
+	    					Began working at Jefferson County Open Space Youth Work Program as a laborer, doing trail building and maintenance
+	    				</p>
+	    			</div>
+	    		</div>
+	    		<div id="date3" style="position:absolute; left:55.5%; top:257px; visibility: hidden; opacity: 0;">
+	    			<div class="date" id="d3">
+	    				<h3 style="left:-7px">2010</h3>
+	    			</div>
+	    			<div class="arrow-left" id="d33"></div>
+	    			<div id="work-content1" class="shadow">
+	    				<img id="alpencrest" src="../img/alpencrest.gif">
+	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
+	    					Began working at Alpencrest Landscaping Specialties as a laborer, working with a small team on a variety of professional projects
+	    				</p>
+	    			</div>
+	    		</div>
+	    		<div id="date4" style="position:absolute; left:36%; top:275px; visibility: hidden; opacity: 0;">
+	    			<div class="date" style="position:relative; top:125px;">
+	    				<h3>2011</h3>
+	    			</div>
+	    			<div class="arrow-right" id="d4"></div>
+	    			<div id="edu-content2" class="shadow">
+	    				<img id="grad" src="../img/2011.jpg">
+	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px; width: 200px;">Graduated from Conifer High School</p>
+	    			</div>
+	    		</div>
+
+				<div id="date5" style="position:absolute; left:36%; top:300px; visibility: hidden; opacity: 0;">
+	    			<div class="date" style="position:relative; top:145px;">
+	    				<h3>2011</h3>
+	    			</div>
+	    			<div class="arrow-right" id="d5"></div>
+	    			<div id="edu-content3" class="shadow">
+	    				<img id="cu" src="../img/cu.jpg">
+	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px; width: 200px;">Started attending University of Colorado at Boulder</p>
+	    			</div>
+	    		</div>
+	    		<div id="date6" style="position:absolute; left:36%; top:340px; visibility: hidden; opacity: 0;">
+	    			<div class="date" style="position:relative; top:145px;">
+	    				<h3>2012</h3>
+	    			</div>
+	    			<div class="arrow-right" id="d6"></div>
+	    			<div id="edu-content4" class="shadow">
+	    				<img id="cs" src="../img/cs.jpg">
+	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px; width: 200px;">Declared Computer Science Engineering Major</p>
+	    			</div>
+	    		</div>
+	    		<div id="date7" style="position:absolute; left:55.5%; top:340px; visibility: hidden; opacity: 0;">
+	    			<div class="date" id="d7">
+	    				<h3 style="left:-7px">2013</h3>
+	    			</div>
+	    			<div class="arrow-left" style="top:135px"></div>
+	    			<div id="work-content2" class="shadow">
+	    				<img id="droplets" src="../img/droplets.png">
+	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
+	    					Worked in a summer research internship at CU funded by AccessSTEM. Wrote simulator code for swarm robotics 'droplets' project in the Correll Lab at the Engineering Center
+	    				</p>
+	    			</div>
+	    		</div>
+	    		<div id="date8" style="position:absolute; left:55.5%; top:240px; visibility: hidden; opacity: 0;">
+	    			<div class="date" id="d8">
+	    				<h3 style="left:-7px">2014</h3>
+	    			</div>
+	    			<div class="arrow-left" style="top:285px"></div>
+	    			<div id="work-content3" class="shadow">
+	    				<img id="twc" src="../img/twc.jpg">
+	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-5px;width: 250px;">
+	    					Worked at Time Warner Cable for a summer internship with the Big Data team, more specifically doing web development for data analysis and gaining experience with a wide variety of web libraries and platforms. 
+	    				</p>
+	    			</div>
+	    		</div>
+	    		<div id="date9" style="position:absolute; left:36%; top:500px; visibility: hidden; opacity: 0;">
+	    			<div class="date" style="position:relative; top:185px;">
+	    				<h3>2015</h3>
+	    			</div>
+	    			<div class="arrow-right" id="d9"></div>
+	    			<div id="edu-content5" class="shadow">
+	    				<img id="champ" src="../img/champ.jpg">
+	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px; width: 200px;">Expected graduation from CU</p>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="third-page" style="position: absolute; top:100%; background: linear-gradient(to bottom, #ade1f4, #76cef0); width:100%; height:100% ">
+	    		<h1 id="title3" style="font-size: 40px; font-family: Oswald" align="center">- Technical Skills -</h1>
+	    		<img id="sun" src="../img/sun.png">
+	    		<img id="skyline" src="../img/city.png">
+	    		<img id="bush1" src="../img/bush.png">
+	    		<img id="bush2" src="../img/bush.png">
+	    		<img id="bush3" src="../img/bush.png">
+	    		<img id="tree1" src="../img/tree.png">
+	    		<img id="tree2" src="../img/tree2.png">
+	    		<img id="tree3" src="../img/tree3.png">
+	    		<img id="tree4" src="../img/tree.png">
+	    		<img id="tree5" src="../img/tree2.png">
+	    		<img id="cloud1" src="../img/cloud.png">
+	    		<img id="cloud2" src="../img/cloud.png">
+	    		<img id="cloud3" src="../img/cloud.png">
+	    		<img id="cloud4" src="../img/cloud.png">
+
+	    		<div id="ground1">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:450px">
+	    			<img src="../img/ground2.png" class="ground" style="left:600px">
+	    			<img src="../img/ground2.png" class="ground" style="left:750px">
+	    			<img src="../img/ground2.png" class="ground" style="left:900px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1050px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+	    		<div id="ground2" style="position:absolute; left: 1350px; bottom: 0px">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:450px">
+	    			<img src="../img/ground2.png" class="ground" style="left:600px">
+	    			<img src="../img/ground2.png" class="ground" style="left:750px">
+	    			<img src="../img/ground2.png" class="ground" style="left:900px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1050px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+	    		<div id="ground3" style="position:absolute; left: 2700px; bottom: 0px">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:450px">
+	    			<img src="../img/ground2.png" class="ground" style="left:600px">
+	    			<img src="../img/ground2.png" class="ground" style="left:750px">
+	    			<img src="../img/ground2.png" class="ground" style="left:900px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1050px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+	    		<div id="ground4" style="position:absolute; left: 2700px; bottom: 0px">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:450px">
+	    			<img src="../img/ground2.png" class="ground" style="left:600px">
+	    			<img src="../img/ground2.png" class="ground" style="left:750px">
+	    			<img src="../img/ground2.png" class="ground" style="left:900px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1050px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+	    		<div id="ground5" style="position:absolute; left: 2700px; bottom: 0px">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:450px">
+	    			<img src="../img/ground2.png" class="ground" style="left:600px">
+	    			<img src="../img/ground2.png" class="ground" style="left:750px">
+	    			<img src="../img/ground2.png" class="ground" style="left:900px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1050px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+	    		<div id="ground6" style="position:absolute; left: 2700px; bottom: 0px">
+	    			<img src="../img/grass.gif" style="position:absolute; bottom: 150px; width: 1350px; height: 10px; overflow: hidden">
+	    			<img src="../img/ground2.png" class="ground">
+	    			<img src="../img/ground2.png" class="ground" style="left:150px">
+	    			<img src="../img/ground2.png" class="ground" style="left:300px">
+	    			<img src="../img/ground2.png" class="ground" style="left:1200px">
+	    		</div>
+
+	    		<div id="sect1">
+					<h1 class="bnr">Languages & Technologies<span><b></b><b></b><i></i><i></i></span></h1>
+					<div class="sect shadow">
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 40px;font-size: 25px"> C, C++, Java, Ruby, Python, Scala, HTML, CSS, Javascript </p>
+					</div>
+				</div>
+				<div id="sect2">
+					<h1 class="bnr">Frameworks & Libraries<span><b></b><b></b><i></i><i></i></span></h1>
+					<div class="sect shadow">
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 25px;font-size: 25px"> Rails, jQuery, AngularJS, Vue.js + Component, Web Components / Polymer, Crossfilter, Twitter Bootstraps </p>
+					</div>
+				</div>
+				<div id="sect3">
+					<h1 class="bnr">Databases & Servers<span><b></b><b></b><i></i><i></i></span></h1>
+					<div class="sect shadow">
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> Servers: Flask, Node.js<br>
+						Databases: SQLlite, postgreSQL, mySQL, mongoDB </p>
+					</div>
+				</div>
+				<div id="sect4">
+					<h1 class="bnr">Development Environments<span><b></b><b></b><i></i><i></i></span></h1>
+					<div  class="sect shadow">
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> Development Tools: Visual Studio, Eclipse<br>
+						Operating Systems: Mac, Linux, Windows </p>
+					</div>
+				</div>
+	    		<div id="sect5">
+					<h1 class="bnr">Concepts<span><b></b><b></b><i></i><i></i></span></h1>
+					<div class="sect shadow">
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> MVC design patterns, Agile (vs Waterfall) development, Object-oriented programming </p>
+					</div>
+				</div>
+	    		
+	    	</div>
+	    	<div id="ground-page" style="position: absolute;background: -webkit-gradient(linear,left bottom,left top,color-stop(1, rgba(0,0,0,0.0)), color-stop(0, rgba(0,0,0,1.0))); top:100%; width:100%; height:100%">
+	    		<div id="layer1" style="position:absolute;top:0;left:-74px;">
+	    			<div class="rock ground2">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer1"></div>
+	    			</div>
+	    		</div>
+	    		<div id="layer2" style="position:absolute;top:150px;left:-74px;">
+	    			<div class="rock ground2">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer2"></div>
+	    			</div>
+	    		</div>
+	    		<div id="layer3" style="position:absolute;top:300px;left:-74px;opacity:1">
+	    			<div class="rock ground2">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer3"></div>
+	    			</div>
+	    		</div>
+	    		<div id="layer4" style="position:absolute;top:450px;left:-74px;opacity:1">
+	    			<div class="rock ground2">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer4"></div>
+	    			</div>
+	    		</div>
+	    		<div id="layer5" style="position:absolute;top:600px;left:-74px;opacity:1">
+	    			<div class="rock ground2">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer5"></div>
+	    			</div>
+	    		</div>
+	    		<div id="layer6" style="position:absolute;top:750px;left:-74px;opacity:1">
+	    			<div class="rock ground2">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:150px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:300px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:450px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:600px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:750px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:900px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1050px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1200px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1350px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    			<div class="rock ground2" style="left:1500px">
+	    				<div class="layer6"></div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    	<div id="contact-page" style="position: absolute; background: #000; top:100%; width:100%; height:100%">
+	    		<h1 id="title4" style="font-size: 40px; font-family: Oswald; z-index:5; color:#fff" align="center">- The End -</h1>
+	    		<div id="thanks" align="center">
+	    			<p style="font-family: 'Oswald', serif;font-size: 30px;top: -18px;position: relative;color: #fff;">Thanks for checking out my online resume! </p>
+	    		</div>
+	    		<div id="contact" align="center">
+	    			<h1 style="font-family: 'Oswald', serif; font-size: 30px; color: #fff">Contact</h1>
+		    		<p style="font-family: 'Oswald', serif; font-size: 23px">
+		    			- Find -<br>
+		    			Boulder, Colorado<br><br>
+		    			- Email -<br>
+		    			samuel.beckett@colorado.edu<br><br>
+		    			- Call -<br>
+		    			720-273-2750<br><br>
+		    			- Surf -<br>
+		    			<a href="https://www.linkedin.com/pub/sam-beckett/7a/953/72a">LinkedIn</a>
+		    			 ||
+		    			<a href="https://www.facebook.com/I.am.SAM.the.MAN">Facebook</a>
+		    		</p>
+		    		
+		    	</div>
+	    	</div>
+	    		
 	    </section>
 	</div>
 	<script type="text/javascript" src="scrollcode.js"></script>

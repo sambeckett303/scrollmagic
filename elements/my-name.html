@@ -1,0 +1,50 @@
+<polymer-element name="my-name" noscript>
+<template>
+	<style>
+
+		h1 {
+			font-family: 'Oswald', serif;
+			font-size: 80px;
+			letter-spacing:25px;
+			margin-left:15px;
+		}
+		img {
+			-webkit-border-radius: 7px;
+			-moz-border-radius: 7px;
+			border-radius: 7px;
+			position: relative;
+			left: 0px;
+			top:-15px;
+			width: 400px;
+		}
+		#label {
+			position: relative;
+			left: 460px;
+			top: -440px;
+			font-family: 'Oswald', serif;
+			font-size: 40px;
+		}
+		#blurb {
+			position: relative;
+			left: 460px;
+			top: -460px;
+			font-family: 'Oswald', serif;
+			font-size: 18px;
+		}
+		#scrollcircle {
+			border-radius: 50%;
+			width: 120px;
+    		height: 120px;
+    		background: green;
+    		position: relative;
+			top: -380px;
+			left: 440px;
+		}
+	</style>
+	<h1>Sam Beckett</h1>
+	<img src="../img/me.jpg">
+	<p id="label">Software Engineer</p>
+	<p id="blurb">Welcome to my page! Scroll down to learn more about me</p> 
+	<div id="scrollcircle"></div>
+</template>
+</polymer-element>
