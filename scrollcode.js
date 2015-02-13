@@ -5,12 +5,62 @@ var controller = new ScrollMagic({
     }
 });
 function stopRotation() {
-    $('#actualball').css('-webkit-animation', '').css('-moz-animation', '').css('animation', '');
+    $('#actualball').css('-webkit-animation', '');
+    $('#actualball').css('-moz-animation', '');
+    $('#actualball').css('animation', '');
 };
+function getVerticalHeight() {
+  var myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myHeight = document.body.clientHeight;
+  }
+  return myHeight;
+}
 
 $(document).ready(function(){
+    var docHeight = getVerticalHeight();
+    var initialBallHeight = docHeight*0.25;
+    var initialSnowHeight = docHeight*0.38;
+    var snow1 = initialSnowHeight+110;
+    var snow2 = snow1-30;
+    var snow3 = snow2-100;
+    var snow4 = snow3+200;
+    var firstSnowHeight = snow1+"px";
+    var secondSnowHeight = snow2+"px";
+    var thirdSnowHeight = snow3+"px";
+    var fourthSnowheight = snow4+"px";
+    var date1Height = docHeight*(0.1);
+    var date2Height = docHeight*(0.28);
+    var date3Height = docHeight*(0.36);
+    var date4Height = docHeight*(0.41);
+    var date5Height = docHeight*(0.44);
+    var date6Height = docHeight*(0.52);
+    var date7Height = docHeight*(0.62);
+    var date8Height = docHeight*(0.65);
+    var date1String = date1Height+"px";
+    var date2String = date2Height+"px";
+    var date3String = date3Height+"px";
+    var date4String = date4Height+"px";
+    var date5String = date5Height+"px";
+    var date6String = date6Height+"px";
+    var date7String = date7Height+"px";
+    var date8String = date8Height+"px";
+    var stopRot = stopRotation();
+
     var pinani = new TimelineMax()
-        .add(TweenMax.to("#myname", 2, {scale: 5, rotation: 360, ease: Linear.easeNone}))
+        .add([
+            TweenMax.to("#myname", 2, {scale: 5, rotation: 360, ease: Linear.easeNone}),
+            TweenMax.to("#animated-example", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow2", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow3", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone})
+        ])
         .add(TweenMax.to("#myname", .5, {scale: 15, ease: Linear.easeNone}))
         .add([
             TweenMax.to("#snowboard", 3, {css:{top:"-920px", left:"73%"}}),
@@ -37,8 +87,8 @@ $(document).ready(function(){
 
         ])
         .add([
-            TweenMax.to("#soccerball", 3, {css:{top:"190px"}, ease: Bounce.easeOut}),
-            TweenMax.to("#soccerball", 3, {css:{left:"61%"}, onComplete: stopRotation()}),
+            TweenMax.to("#soccerball", 3, {css:{top:initialBallHeight}, ease: Bounce.easeOut}),
+            TweenMax.to("#soccerball", 3, {css:{left:"61%"}, onComplete: stopRot}),
             TweenMax.to("#soccer", 1, {css:{visibility:"visible"}, delay: 1.1})
         ])
         .add([
@@ -50,28 +100,28 @@ $(document).ready(function(){
             
         ])
         .add([
-            TweenMax.to("#snow", 1, {css:{top:"370px",left:"390px"}, ease: Linear.easeNone}),
+            TweenMax.to("#snow", 1, {css:{top:firstSnowHeight,left:"390px"}, ease: Linear.easeNone}),
             TweenMax.to("#stick", 0.7, {rotation: 20, transformOrigin:"left 50%", ease: Linear.easeNone})
         ])
         .add([
-            TweenMax.to("#snow", .2, {css:{top:"340px",left:"450px"}})
+            TweenMax.to("#snow", .2, {css:{top:secondSnowHeight,left:"450px"}})
         ])
         .add([
-            TweenMax.to("#snow", .4, {css:{top:"240px",left:"700px"}, ease: Linear.easeNone}),
+            TweenMax.to("#snow", .4, {css:{top:thirdSnowHeight,left:"700px"}, ease: Linear.easeNone}),
             TweenMax.to("#snow", .4, {rotation: -180, transformOrigin:"0% 50%", ease: Linear.easeNone}),
             TweenMax.to("#stick", .4, {rotation: 0, transformOrigin:"left 50%", ease: Bounce.easeOut}),
             TweenMax.to("#snowboarding", .4, {css:{opacity:"0.5"}}),
             TweenMax.to("#snowboarding", .4, {rotation: -180, transformOrigin:"left% 50%", ease: Linear.easeNone})
         ])
         .add([
-            TweenMax.to("#snow", .25, {css:{top:"440px",left:"64%"}, ease: Linear.easeNone}),
+            TweenMax.to("#snow", .25, {css:{top:fourthSnowheight,left:"64%"}, ease: Linear.easeNone}),
             TweenMax.to("#snow", .24, {rotation: -350, transformOrigin:"0% 50%", ease: Linear.easeNone}),
             TweenMax.to("#snowboarding", .2, {css:{opacity:"1"}}),
             TweenMax.to("#snowboarding", .2, {rotation: -360, transformOrigin:"left% 50%", ease: Linear.easeNone})
         ])
         .add([
             TweenMax.to("#biker", 2, {css:{left:"220px"}}),
-            TweenMax.to("#biking", 1, {css:{left:"66%"}, ease: Bounce.easeOut, delay: 1})
+            TweenMax.to("#biking", 1, {css:{left:"50%"}, ease: Bounce.easeOut, delay: 1})
         ])
         .add([
             TweenMax.to("#first-page", 3, {css:{top:"-100%"}}),//, ease: Linear.easeNone}),
@@ -101,7 +151,7 @@ $(document).ready(function(){
             TweenMax.to("#k", .5, {css:{top:"100px", visibility:"visible"}, ease:Bounce.easeOut, delay: 0.5}),
         ])
         .add([
-            TweenMax.to("#timeline-circle", 1, {css:{top:"120px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 1, {css:{top:date1String}, ease: Linear.easeNone}),
             TweenMax.to("#timeline-circle", 1, {scale: 0.8, ease: Linear.easeNone})
         ])
         .add([
@@ -109,43 +159,43 @@ $(document).ready(function(){
             TweenMax.to("#date2", 1, {css:{visibility:"visible", opacity: "1"}})
         ])
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"220px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date2String}, ease: Linear.easeNone}),
             TweenMax.to("#date1", 1, {css:{ opacity: "0"}, ease: Linear.easeNone}),
             TweenMax.to("#date2", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date3", 1, {css:{visibility:"visible", opacity:"1"}, ease: Linear.easeNone}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"270px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date3String}, ease: Linear.easeNone}),
             TweenMax.to("#date3", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date4", 1, {css:{visibility:"visible", opacity:"1"}, ease: Linear.easeNone}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"317px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date4String}, ease: Linear.easeNone}),
             TweenMax.to("#date4", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date5", 1, {css:{visibility:"visible", opacity:"1"}}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"355px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date5String}, ease: Linear.easeNone}),
             TweenMax.to("#date5", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date6", 1, {css:{visibility:"visible", opacity:"1"}}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"390px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date6String}, ease: Linear.easeNone}),
             TweenMax.to("#date6", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date7", 1, {css:{visibility:"visible", opacity:"1"}, ease: Linear.easeNone}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"440px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date7String}, ease: Linear.easeNone}),
             TweenMax.to("#date7", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date8", 1, {css:{visibility:"visible", opacity:"1"}, ease: Linear.easeNone}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"560px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{top:date8String}, ease: Linear.easeNone}),
             TweenMax.to("#date8", 1, {css:{ opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#date9", 1, {css:{visibility:"visible", opacity:"1"}, ease: Linear.easeNone}))
         .add([
-            TweenMax.to("#timeline-circle", 2, {css:{top:"600px"}, ease: Linear.easeNone}),
+            TweenMax.to("#timeline-circle", 2, {css:{opacity: "0",top:"600px"}, ease: Linear.easeNone}),
             TweenMax.to("#date9", 1, {css:{ opacity: "0"}, ease: Linear.easeNone})
         ])
         .add([

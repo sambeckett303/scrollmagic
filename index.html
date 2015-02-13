@@ -10,6 +10,7 @@
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.13.1/TweenMax.min.js"></script>
 	<script type="text/javascript" src="assets/jquery.scrollmagic.js"></script>
   	<script type="text/javascript" src="assets/jquery.scrollmagic.debug.js"></script>
+
   	<script type"text/javascript" src="assets/polymer.js"></script>
   	<link rel="stylesheet" type="text/css" href="scrollcss.css">
   	<link rel="stylesheet" type="text/css" href="style.css">
@@ -23,14 +24,20 @@
 </head>
 <body>
 	<!--<div style="position:absolute;top:0;bottom:0;right:0;left:0">-->
-		
-	
-
 	<div id="content-wrapper">
 
 	    <section id="pin" class="scroll-magic-section">
 	    	<div id="myname" style="margin-left: auto; margin-right: auto; width: 1000px">
 	    		<my-name id="myname2"></my-name>
+	    	</div>
+	    	<div id="animated-example" class="animated bounce">
+	    		<img src="../img/down.png">
+	    	</div>
+	    	<div id="arrow2" class="animated bounce">
+	    		<img src="../img/down.png">
+	    	</div>
+	    	<div id="arrow3" class="animated bounce">
+	    		<img src="../img/down.png">
 	    	</div>
 	    	<div id="snowboard" style="position: relative;top: -920px;left: -170px;">
 	    		<my-snowboarder></my-snowboarder>
@@ -57,24 +64,24 @@
 
 
 		    	<div id="soccerball" style="position: absolute; top:-110px; left:-170px; z-index: 2;">
-		    		<my-soccerball id="actualball"></my-soccerball>
+		    		<img id="actualball" src="../img/soccerball.png">
 		    	</div>
-		    	<h1 id="soccer" style="position: absolute;top: 210px;left:30%;font-size: 40px;font-family: Oswald;width:140px;visibility: hidden; z-index: 1">SOCCER</h1>
-		    	<!--transition: visibility 0s 0.5s, opacity 0.5s linear   opacity: 0-->
-		    	<div id="stick" style="position: absolute; top: 220px; left: 1800px">
+		    	<h1 id="soccer" style="position: absolute;left:30%;font-size: 40px;font-family: Oswald;width:140px;visibility: hidden; z-index: 1">SOCCER</h1>
+		    	
+		    	<div id="stick" style="position: absolute; left: 1800px">
 		    		<img style="width: 300px; -webkit-transform:rotate(-52deg);" src="../img/stick.png">
 		    	</div>
 		    	<h1 id="hockey" style="position: absolute;top: 332px;left: 68%;font-size: 40px;font-family: Oswald;width:140px; visibility: hidden; transform-style: preserve-3d; -webkit-transform: rotateY(180deg); transform: rotateY(180deg);opacity:0">HOCKEY</h1>
 		    
-		    	<div id="snow" style="position:absolute; top:260px; left: -240px; transform:scale(0,0)">
+		    	<div id="snow" style="position:absolute; top:260px; left: -240px;">
 		    		<img src="../img/snowboarder.png" style="width: 150px">
 		    	</div>
 		    	<h1 id="snowboarding" style="position: absolute; top: 460px; left:20%; font-size:40px;font-family:Oswald;width:370px;opacity:0">SNOWBOARDING</h1>
 
-		    	<div id="biker" style="position: absolute; top: 610px; left: 1800px">
+		    	<div id="biker" style="position: absolute;  left: 1800px">
 		    		<img src="../img/bike.png" style="width:200px">
 		    	</div>
-		    	<h1 id="biking" style="position: absolute; top: 610px; left:1600px; font-size:40px;font-family:Oswald;width:370px">BIKING</h1>
+		    	<h1 id="biking" style="position: absolute;  left:1600px; font-size:40px;font-family:Oswald;width:370px">BIKING</h1>
 			</div>
 	    	<div id="second-page" style="position: absolute; top:100%; background-color:#990000; width:100%; height:100% ">
 	    		<h1 id="personal-timeline" style="font-size: 40px; font-family: Oswald" align="center">- Personal Timeline -</h1>
@@ -106,7 +113,7 @@
 	    			<div class="arrow-right"></div>
 	    			<div id="edu-content1" class="shadow">
 	    				<img id="conifer" src="../img/coniferhs.jpg">
-	    				<p style="font-size: 25px;position: relative;left: 28px;font-family: Oswald;top: -12px;">Started attending Conifer High School</p>
+	    				<p style="font-size: 25px;position: relative;left: 33px;font-family: Oswald;top: -12px;">Started attending Conifer High School</p>
 	    			</div>
 	    		</div>
 	    		<div id="date2" style="position:absolute; left:55.5%; top:247px; visibility: hidden; opacity: 0;">
@@ -116,7 +123,7 @@
 	    			<div class="arrow-left"></div>
 	    			<div id="work-content1" class="shadow">
 	    				<img id="ywp" src="../img/jeffco.jpg">
-	    				<p style="font-size:25px;position:relative;left:27px;font-family:Oswald;top:-15px;width:261px;">
+	    				<p style="font-size:18px;position:relative;left:27px;font-family:Oswald;top:-15px;width:261px;">
 	    					Began working at Jefferson County Open Space Youth Work Program as a laborer, doing trail building and maintenance
 	    				</p>
 	    			</div>
@@ -128,7 +135,7 @@
 	    			<div class="arrow-left" id="d33"></div>
 	    			<div id="work-content1" class="shadow">
 	    				<img id="alpencrest" src="../img/alpencrest.gif">
-	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
+	    				<p style="font-size:18px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
 	    					Began working at Alpencrest Landscaping Specialties as a laborer, working with a small team on a variety of professional projects
 	    				</p>
 	    			</div>
@@ -171,8 +178,8 @@
 	    			<div class="arrow-left" style="top:135px"></div>
 	    			<div id="work-content2" class="shadow">
 	    				<img id="droplets" src="../img/droplets.png">
-	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
-	    					Worked in a summer research internship at CU funded by AccessSTEM. Wrote simulator code for swarm robotics 'droplets' project in the Correll Lab at the Engineering Center
+	    				<p style="font-size:18px;position:relative;left:28px;font-family:Oswald;top:-15px;width: 250px;">
+	    					Worked in a summer research internship at CU Correll Lab in the Engineering Center. Wrote simulator code for swarm robotics 'droplets' project. 
 	    				</p>
 	    			</div>
 	    		</div>
@@ -180,16 +187,16 @@
 	    			<div class="date" id="d8">
 	    				<h3 style="left:-7px">2014</h3>
 	    			</div>
-	    			<div class="arrow-left" style="top:285px"></div>
+	    			<div class="arrow-left" style="top:235px"></div>
 	    			<div id="work-content3" class="shadow">
 	    				<img id="twc" src="../img/twc.jpg">
-	    				<p style="font-size:25px;position:relative;left:28px;font-family:Oswald;top:-5px;width: 250px;">
+	    				<p style="font-size:18px;position:relative;left:28px;font-family:Oswald;top:-5px;width: 250px;">
 	    					Worked at Time Warner Cable for a summer internship with the Big Data team, more specifically doing web development for data analysis and gaining experience with a wide variety of web libraries and platforms. 
 	    				</p>
 	    			</div>
 	    		</div>
 	    		<div id="date9" style="position:absolute; left:36%; top:500px; visibility: hidden; opacity: 0;">
-	    			<div class="date" style="position:relative; top:185px;">
+	    			<div class="date" style="position:relative; top:210px;">
 	    				<h3>2015</h3>
 	    			</div>
 	    			<div class="arrow-right" id="d9"></div>
@@ -200,7 +207,7 @@
 	    		</div>
 	    	</div>
 	    	<div id="third-page" style="position: absolute; top:100%; background: linear-gradient(to bottom, #ade1f4, #76cef0); width:100%; height:100% ">
-	    		<h1 id="title3" style="font-size: 40px; font-family: Oswald" align="center">- Technical Skills -</h1>
+	    		<h1 id="title3" style="font-size: 40px; font-family: Oswald; z-index:10" align="center">- Technical Skills -</h1>
 	    		<img id="sun" src="../img/sun.png">
 	    		<img id="skyline" src="../img/city.png">
 	    		<img id="bush1" src="../img/bush.png">
@@ -287,7 +294,10 @@
 	    		<div id="sect1">
 					<h1 class="bnr">Languages & Technologies<span><b></b><b></b><i></i><i></i></span></h1>
 					<div class="sect shadow">
-						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 40px;font-size: 25px"> C, C++, Java, Ruby, Python, Scala, HTML, CSS, Javascript </p>
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> 
+							Good: Java, Python, Javascript<br>
+							Proficient: C, C++, HTML, CSS<br>
+							Beginner: Ruby, Scala </p>
 					</div>
 				</div>
 				<div id="sect2">
@@ -306,14 +316,14 @@
 				<div id="sect4">
 					<h1 class="bnr">Development Environments<span><b></b><b></b><i></i><i></i></span></h1>
 					<div  class="sect shadow">
-						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> Development Tools: Visual Studio, Eclipse<br>
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> Development Tools: Visual Studio, Eclipse, Git<br>
 						Operating Systems: Mac, Linux, Windows </p>
 					</div>
 				</div>
 	    		<div id="sect5">
 					<h1 class="bnr">Concepts<span><b></b><b></b><i></i><i></i></span></h1>
 					<div class="sect shadow">
-						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> MVC design patterns, Agile (vs Waterfall) development, Object-oriented programming </p>
+						<p style="font-family: 'Oswald', serif;text-align: center;position: relative;top: 20px;font-size: 25px"> MVC design patterns, Agile (vs Waterfall) development, Object-oriented design patterns, </p>
 					</div>
 				</div>
 	    		
@@ -533,28 +543,29 @@
 	    	<div id="contact-page" style="position: absolute; background: #000; top:100%; width:100%; height:100%">
 	    		<h1 id="title4" style="font-size: 40px; font-family: Oswald; z-index:5; color:#fff" align="center">- The End -</h1>
 	    		<div id="thanks" align="center">
-	    			<p style="font-family: 'Oswald', serif;font-size: 30px;top: -18px;position: relative;color: #fff;">Thanks for checking out my online resume! </p>
+	    			<p style="font-family: 'Oswald', serif;font-size: 30px;top: -18px;position: relative;color: #fff;">Thanks for stopping by! </p>
 	    		</div>
 	    		<div id="contact" align="center">
-	    			<h1 style="font-family: 'Oswald', serif; font-size: 30px; color: #fff">Contact</h1>
+	    			<h1 style="font-family: 'Oswald', serif; font-size: 30px; color: #fff">Sam Beckett</h1>
 		    		<p style="font-family: 'Oswald', serif; font-size: 23px">
-		    			- Find -<br>
-		    			Boulder, Colorado<br><br>
-		    			- Email -<br>
-		    			samuel.beckett@colorado.edu<br><br>
-		    			- Call -<br>
-		    			720-273-2750<br><br>
-		    			- Surf -<br>
+		    			- <b>Email</b> -<br>
+		    			samuel.beckett@colorado.edu<br>
+		    			- <b>Phone</b> -<br>
+		    			720-273-2750<br>
+		    			- <b>Web</b> -<br>
 		    			<a href="https://www.linkedin.com/pub/sam-beckett/7a/953/72a">LinkedIn</a>
 		    			 ||
 		    			<a href="https://www.facebook.com/I.am.SAM.the.MAN">Facebook</a>
 		    		</p>
-		    		
+		    	<canvas id="canvas2" style="position: absolute;left: 420px;top: 140px;">Canvas is not supported in your browser.</canvas>
 		    	</div>
 	    	</div>
 	    		
 	    </section>
 	</div>
+	<script type="text/javascript" src="setVertical.js"></script>
 	<script type="text/javascript" src="scrollcode.js"></script>
+	<script type="text/javascript" src="canvas.js"></script>
+	<script type="text/javascript" src="canvas2.js"></script>
 </body>
 </html>
