@@ -57,9 +57,9 @@ $(document).ready(function(){
     var pinani = new TimelineMax()
         .add([
             TweenMax.to("#myname", 2, {scale: 5, rotation: 360, ease: Linear.easeNone}),
-            TweenMax.to("#animated-example", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone}),
-            TweenMax.to("#arrow2", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone}),
-            TweenMax.to("#arrow3", 0.75, {css:{opacity:"0"}, ease: Linear.easeNone})
+            TweenMax.to("#animated-example", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow2", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow3", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#myname", .5, {scale: 15, ease: Linear.easeNone}))
         .add([
