@@ -52,14 +52,13 @@ $(document).ready(function(){
     var date6String = date6Height+"px";
     var date7String = date7Height+"px";
     var date8String = date8Height+"px";
-    var stopRot = stopRotation();
 
     var pinani = new TimelineMax()
         .add([
             TweenMax.to("#myname", 2, {scale: 5, rotation: 360, ease: Linear.easeNone}),
-            TweenMax.to("#animated-example", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone}),
-            TweenMax.to("#arrow2", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone}),
-            TweenMax.to("#arrow3", 0.5, {css:{opacity:"0"}, ease: Linear.easeNone})
+            TweenMax.to("#animated-example", 0.25, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow2", 0.25, {css:{opacity:"0"}, ease: Linear.easeNone}),
+            TweenMax.to("#arrow3", 0.25, {css:{opacity:"0"}, ease: Linear.easeNone})
         ])
         .add(TweenMax.to("#myname", .5, {scale: 15, ease: Linear.easeNone}))
         .add([
@@ -88,7 +87,7 @@ $(document).ready(function(){
         ])
         .add([
             TweenMax.to("#soccerball", 3, {css:{top:initialBallHeight}, ease: Bounce.easeOut}),
-            TweenMax.to("#soccerball", 3, {css:{left:"61%"}, onComplete: stopRot}),
+            TweenMax.to("#soccerball", 3, {css:{left:"61%"}}),
             TweenMax.to("#soccer", 1, {css:{visibility:"visible"}, delay: 1.1})
         ])
         .add([
@@ -305,5 +304,5 @@ $(document).ready(function(){
         .setTween(pinani)
         .setPin("section#pin")
         .addTo(controller)
-        .addIndicators();
+        //.addIndicators();
     });
