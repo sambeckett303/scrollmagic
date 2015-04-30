@@ -23,6 +23,11 @@ app.get('/', function(req, res) {
   res.sendfile('index.html');
 });
 
+app.get('/projects', function(req, res) {
+  res.sendfile('projects.html');
+});
+
+
 app.get(/^(.+)$/, function(req, res){ 
   res.sendfile( __dirname + req.params[0]); 
 });
